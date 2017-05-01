@@ -2,14 +2,7 @@ package qubit
 
 import spire.math.Complex
 
-case class Qubit(alpha: Complex[Double], beta: Complex[Double]) {
-  require(alpha.norm * alpha.norm + beta.norm * beta.norm == 1)
-
-  def <|>(rhs: Qubit): Complex[Double] =
-    (this.alpha * rhs.alpha) + (this.beta * rhs.beta)
-
-  def measure(): Qucbit = ???
-}
+case class Qubit(var alpha: Complex[Double], var beta: Complex[Double]) extends Qu
 
 object Qubit {
   val Zero = Qubit(1, 0)
